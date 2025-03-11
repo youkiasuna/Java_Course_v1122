@@ -26,7 +26,6 @@ public class Lab05 {
       Racer racer3 = new Racer(7);
       
       runTheRace(racer1);
-     
       runTheRace(racer2);
       runTheRace(racer3);
 	}
