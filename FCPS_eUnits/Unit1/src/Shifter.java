@@ -14,4 +14,46 @@
    	 * What methods must you define? *
    	 *                               *
    	 *********************************/
+      @Override
+      public void workCorner()
+      {
+      
+      }
+      @Override
+      public void moveOneBlock()
+      {
+
+      }
+      @Override
+      public void turnToTheRight()
+      {
+
+      }
+      @Override
+      public void turnToTheNorth()
+      {
+
+      }
+      @Override
+      public void run()
+      {
+         int[] counterAry = new int[10];
+         for(int i=0;i<counterAry.length;i++){
+            //Lisa.move();
+            while(nextToABeeper()){
+               pickBeeper();
+               counterAry[i]++;
+            }
+            if(i>0){
+               for(int j=0;j<counterAry[i-1];j++){
+                  putBeeper();
+               }
+            }
+            move();
+         
+      } 
+
+      }
+      
+
    }
