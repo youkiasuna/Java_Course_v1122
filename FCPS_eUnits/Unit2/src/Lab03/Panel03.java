@@ -1,29 +1,43 @@
 	//Name______________________________ Date_____________
+   package Lab03;
    import java.awt.*;
    import javax.swing.JPanel;
    import java.awt.image.BufferedImage;
+   import javax.swing.JOptionPane;
+   
    public class Panel03 extends JPanel
    {
       private BufferedImage myImage;
       public Panel03()
       {
-         final int N = 400; //width & height of buffered-image
+         //final int N = 400; //width & height of buffered-image
+         String inputStr = JOptionPane.showInputDialog(
+                  "width and hight of buffered-image", "400");
+         if(inputStr == null){
+            return;
+         }   
+         int N = Integer.parseInt(inputStr);
+         
          myImage = new BufferedImage(N, N, BufferedImage.TYPE_INT_RGB);
          Graphics buffer = myImage.getGraphics();
+         
+         inputStr = JOptionPane.showInputDialog("the number of lines", "12");
+         if(inputStr == null){
+            return;
+         }   
+         int line = Integer.parseInt(inputStr);
       
       	//webbing
          buffer.setColor(Color.BLUE);
          buffer.fillRect(0, 0, N, N);
          buffer.setColor(Color.YELLOW);
-         for(int k = 0; k <= 50; k++)
+         for(int k = 0; k <= line - 1; k++)
          {
-            buffer.drawLine(N * k / 50, 0, N, N * k / 50);
-         
-            /************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+            buffer.drawLine(N * k / line, 0, N, N * k / line);
+            buffer.drawLine(N, N * k / line, N - N * k / line, N);
+            buffer.drawLine(N - N * k / line, N, 0, N - N * k / line);
+            buffer.drawLine(0, N - N * k / line, N * k / line, 0);
+            
          
          }
       
@@ -33,11 +47,21 @@
          int size = 100;					//length of each ray
          int r1 = 60, r2 = 55;			//radius of the sun
       
-         /************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
+         buffer.setColor(Color.yellow);
+         
+         inputStr = JOptionPane.showInputDialog("the number of lines", "12");
+         if(inputStr == null){
+            return;
+         }
+         int ray = Integer.parseInt(inputStr);
+         
+         int increment;
+         increment = 360 / ray;
+         for(int angle = 0; angle <= 360; angle += increment){
+            x1 = (int) (x + size * Math.cos(angle * Math.PI / 180));
+            y1 = (int) (x + size * Math.sin(angle * Math.PI / 180));
+            buffer.drawLine(x, y, x1, y1);
+         }
       
          buffer.setColor(Color.BLUE.brighter());
          buffer.fillOval(x - r1, y - r1, r1 * 2, r1 * 2);
