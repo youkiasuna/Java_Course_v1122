@@ -39,7 +39,6 @@
       {
          int[] counterAry = new int[10];
          for(int i=0;i<counterAry.length;i++){
-            //Lisa.move();
             while(nextToABeeper()){
                pickBeeper();
                counterAry[i]++;
@@ -51,7 +50,30 @@
             }
             move();
          
-      } 
+         }
+         turnLeft();
+         move();
+         turnLeft();
+         while(!nextToABeeper()){
+               move();
+         }
+
+         int[] counterAry2 = new int[10];
+         for(int i=0;i<counterAry2.length;i++){
+            while(nextToABeeper()){
+               pickBeeper();
+               counterAry2[i]++;
+            }
+            if(i>0){
+               turnLeft();turnLeft();move();move();
+               for(int j=0;j<counterAry2[i-1];j++){
+                  putBeeper();
+               }
+               turnLeft();turnLeft();move();move();
+            }
+            move();
+         
+         } 
 
       }
       

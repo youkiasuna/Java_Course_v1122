@@ -11,6 +11,9 @@ public class SquareDancer extends Dancer{
    public void danceStep(){
       for(int i=0;i<4;i++){
          move();
+         move();
+         move();
+         move();
          turnLeft();
       }
    }
