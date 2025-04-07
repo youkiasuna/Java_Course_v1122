@@ -77,7 +77,7 @@ public class Mid3 {
 
 
 	public static void main(String[] args) {
-		Display.openWorld("../maps/mop.map");
+		Display.openWorld("../mop.map");
       Display.setSpeed(10);
       Robot bot = new Robot(1, 1, Display.EAST,  Display.INFINITY);
       

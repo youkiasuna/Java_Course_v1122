@@ -4,7 +4,7 @@ public class Lab15 {
 
    public static void main(String[] arg) {
 
-      Display.setSize(15,15);
+      Display.setSize(30,30);
       Display.setSpeed(10);
       Dancer dancer1 = new BackAndForthDancer(3,6,Display.EAST,0);
       Dancer dancer2 = new SquareDancer(8,10,Display.EAST,0);

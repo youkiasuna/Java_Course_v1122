@@ -16,7 +16,7 @@
        public abstract void danceStep();
        public void run()
       {
-         for(int k = 1; k <= 10; k++)
+         for(int k = 1; k <= 1; k++)
          {
             danceStep();
          }
