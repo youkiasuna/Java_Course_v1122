@@ -1,3 +1,4 @@
+//package Lab05;
     //Torbert, e-mail: smtorbert@fcps.edu	
 	 //version 6.17.2003
 	 //version 11.4.09  mlbillington@fcps.edu
@@ -22,6 +23,23 @@
       	/* Your code goes here. */
       	/*                      */
       	/************************/
+         
+         
+         Bug a = new Bug(0, 0);
+         Bug b = new Bug(400, 0);
+         Bug c = new Bug(400, 400);
+         Bug d = new Bug(0, 400);
+         while(!a.sameSpot(b))
+         {
+            buffer.drawLine(a.getX(), a.getY(), b.getX(), b.getY());
+            buffer.drawLine(b.getX(), b.getY(), c.getX(), c.getY());
+            buffer.drawLine(c.getX(), c.getY(), d.getX(), d.getY());
+            buffer.drawLine(d.getX(), d.getY(), a.getX(), a.getY());
+            a.walkTowards(b, 0.1);
+            b.walkTowards(c, 0.1);
+            c.walkTowards(d, 0.1);
+            d.walkTowards(a, 0.1);
+         }
       }
        public void paintComponent(Graphics g)
       {
