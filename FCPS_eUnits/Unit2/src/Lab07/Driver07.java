@@ -1,3 +1,4 @@
+package Lab07;
 	//Name______________________________ Date_____________
    import edu.fcps.Turtle;
    import java.awt.Color;
@@ -13,16 +14,10 @@
          frame.setContentPane(new TurtlePanel());
          frame.setVisible(true);
       
-         PolygonTurtle smidge = new PolygonTurtle(100.0, 3);
+         PolygonTurtle smidge = new PolygonTurtle();
          smidge.setColor(Color.BLUE);
          smidge.setThickness(6);
-         smidge.drawShape();
-      
-         /************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
+         smidge.drawShape(6);
       
       }
    }

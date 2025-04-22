@@ -1,9 +1,11 @@
+package Lab07;
 	//Name______________________________ Date_____________
    import edu.fcps.Turtle;
     public class PolygonTurtle extends Turtle
    {
       private double mySize;
       private int mySides;
+      private double angle;
        public PolygonTurtle()
       {
          super();
@@ -15,28 +17,37 @@
          mySize = n;
          mySides = s;
       }
-       public PolygonTurtle(double x, double y, double h, double n, int s)
+      public PolygonTurtle(double x, double y, double h, double n, int s)
       {
          super(x, y, h);
          mySize = n;
          mySides = s;
       }
-       public void setSize(double n)
+      public void setSize(double n)
       {
          mySize = n;
       }
-       public void setSides(int s)
+      public void setSides(int s)
       {
          mySides = s;
       }
-       public void drawShape()
+      public void drawShape()
       {
-      
-         /************************/
-      	/*                      */
-      	/* Your code goes here. */
-      	/*                      */
-      	/************************/
-      
+         for(int k = 0;k < mySides; k++)
+         {
+            forward(mySize);
+            turnLeft(360/ mySides);
+         }
       }
-   }
+      public void drawShape(int s)
+      {
+         for(int i = 3;i <= s; i++)
+         {
+            for(int k = 0;k < i; k++)
+            {
+               forward(mySize);
+               turnLeft(360/ i);
+            }
+         }
+      }
+   } 
