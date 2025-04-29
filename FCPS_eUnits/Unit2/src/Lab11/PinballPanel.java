@@ -36,8 +36,8 @@
       {
           public void actionPerformed(ActionEvent e)
          {
-            myBuffer.setColor(BACKGROUND);    //cover the 
-            myBuffer.fillRect(0,0,FRAME,FRAME);   //old ball
+            myBuffer.setColor(BACKGROUND);
+            myBuffer.fillRect(0,0,FRAME,FRAME);
             ball.move(FRAME,FRAME);
             ball.draw(myBuffer);     
             repaint();

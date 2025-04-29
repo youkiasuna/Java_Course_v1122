@@ -1,3 +1,4 @@
+package Lab12;
 //Name:              Date:
    import java.awt.*;
     public class Ball extends Polkadot
