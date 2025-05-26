@@ -1,5 +1,4 @@
-    // Phil Ero 15JUL08
-    
+
     public class BumperCollision
    {
       private static double nearestX;	// used to approximate what point of the bumper  
